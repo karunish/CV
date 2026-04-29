@@ -1,0 +1,16 @@
+{
+	"recommendations": [
+		"myriad-dreamin.tinymist",
+		"vscode-icons-team.vscode-icons",
+		"eamodio.gitlens",
+		"mhutchie.git-graph",
+		"EditorConfig.EditorConfig",
+		"github.vscode-github-actions",
+		"ms-azuretools.vscode-docker",
+		"usernamehw.errorlens",
+	],
+	"unwantedRecommendations": [
+		"GoogleCloudTools.cloudcode",
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
+	]
+}

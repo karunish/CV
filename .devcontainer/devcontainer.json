@@ -1,0 +1,27 @@
+{
+	"name": "CV Dev Container environment",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {},            // GitHub CLI
+		"ghcr.io/michidk/devcontainers-features/typst:1": {},         // Typst Feature
+		"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {} // Homebrew
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"myriad-dreamin.tinymist",
+				"vscode-icons-team.vscode-icons",
+				"eamodio.gitlens",
+				"mhutchie.git-graph",
+				"EditorConfig.EditorConfig",
+				"github.vscode-github-actions",
+				"usernamehw.errorlens"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			}
+		}
+	},
+
+	"postCreateCommand": "brew install gum"
+}
