@@ -1,12 +1,14 @@
 #import "resume.typ": *
 
-#let name           = "Karunishram Athi"
-#let location       = "Discovery Gardens, Dubai, UAE"
-#let email          = "karunishram.athi@gmail.com"
-#let github         = "github.com/karunish"
-#let linkedin       = "linkedin.com/in/karunishram-athi"
-#let phone          = "+971 56 227 0797"
-#let personal-site  = ""
+#let metadata = yaml("metadata.yml")
+
+#let name          = metadata.name
+#let location      = metadata.location
+#let email         = metadata.email
+#let github        = "github.com/" + metadata.githubUsername
+#let linkedin      = "linkedin.com/in/" + metadata.linkedinUsername
+#let phone         = metadata.phone
+#let personal-site = metadata.website
 
 #show: resume.with(
   author: name,
