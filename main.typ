@@ -5,8 +5,10 @@
 #let name          = metadata.name
 #let location      = metadata.location
 #let email         = metadata.email
-#let github        = "github.com/" + metadata.githubUsername
-#let linkedin      = "linkedin.com/in/" + metadata.linkedinUsername
+#let github-user   = metadata.at("githubUsername", default: "")
+#let linkedin-user = metadata.at("linkedinUsername", default: "")
+#let github        = if github-user != "" { "github.com/" + github-user } else { "" }
+#let linkedin      = if linkedin-user != "" { "linkedin.com/in/" + linkedin-user } else { "" }
 #let phone         = metadata.phone
 #let personal-site = metadata.website
 
