@@ -1,21 +1,16 @@
 #import "resume.typ": *
+#import "@preview/oxifmt:1.0.0": strfmt
 
-#let name           = "Karunishram Athi"
-#let location       = "Discovery Gardens, Dubai, UAE"
-#let email          = "karunishram.athi@gmail.com"
-#let github         = "github.com/karunish"
-#let linkedin       = "linkedin.com/in/karunishram-athi"
-#let phone          = "+971 56 227 0797"
-#let personal-site  = ""
+#let data = yaml("metadata.yml")
 
 #show: resume.with(
-  author: name,
-  location: location,
-  email: email,
-  github: github,
-  linkedin: linkedin,
-  phone: phone,
-  personal-site: personal-site,
+  author: data.name,
+  location: data.location,
+  email: data.email,
+  github: strfmt("github.com/{}", data.githubUsername),
+  linkedin: strfmt("linkedin.com/in/{}", data.linkedinUsername),
+  phone: data.phone,
+  personal-site: data.website,
   accent-color: "#000000",
   font: "New Computer Modern",
   paper: "a4",
@@ -27,6 +22,17 @@
 
 #set par(justify: true)
 A versatile and results-driven Computer Science student in Year 3 with a strong foundation in software development, IoT, and AI. Experienced in modern frameworks like React, Next.js, and TypeScript, with a proven track record in hardware-software integration, full-stack system architecture, and cloud technologies. Passionate about building functional, high-performance tools that bridge the gap between software and the physical world.
+
+== Education
+
+#edu(
+  institution: "Heriot-Watt University",
+  location: "Dubai, UAE",
+  dates: dates-helper(start-date: "Sept 2024", end-date: "Sept 2028"),
+  degree: "Bachelor of Science in Computer Science (Artificial Intelligence)",
+  consistent: true,
+)
+- Courses: Data Structures, Hardware-Software Interface, Web Design and Databases, Interaction Design
 
 == Work Experience
 
@@ -41,6 +47,20 @@ A versatile and results-driven Computer Science student in Year 3 with a strong 
 - Implemented secure user authentication and dynamic data plug-ins to visualize Scope 1, 2, and 3 emissions data.
 - Built interactive charts using data visualization libraries to translate complex carbon metrics into actionable insights.
 - Collaborated in an agile team to refine product requirements and streamline the frontend-to-backend data flow.
+
+== Skills
+
+#grid(
+  rows: 5,
+  columns: (auto, 1fr),
+  row-gutter: 0.75em,
+  column-gutter: 0.5em,
+  [*Web & Full Stack:*], [React, Next.js, Node.js, Express.js, TypeScript, Tailwind CSS, jQuery, HTML/CSS, FSD],
+  [*Programming:*], [Python, Java, Kotlin, JavaScript, C, C++, SQL, Bash, OCaml, PowerShell],
+  [*AI & Data Science:*], [TensorFlow, PyTorch, Scikit-Learn, Pandas, NLP, Deep Learning, Prompt Engineering],
+  [*IoT & Hardware:*], [ESP32 (S3/WROOM), Arduino, BLE, IR Sensors, I2C/SPI, LCD Interfaces],
+  [*Cloud & Tools:*], [AWS (EC2, Lambda), Microsoft Azure, Docker, Docker Compose, Git, MySQL, MongoDB],
+)
 
 == Projects
 
@@ -83,19 +103,7 @@ A versatile and results-driven Computer Science student in Year 3 with a strong 
   desc: [Engineered a real-time mirrored HUD for vehicles. Developed a custom Android app to broadcast GPS/speed limit data via Bluetooth and wrote high-efficiency C++ firmware for low-latency display rendering.]
 )
 
-== Skills
 
-#grid(
-  rows: 5,
-  columns: (auto, 1fr),
-  row-gutter: 0.75em,
-  column-gutter: 0.5em,
-  [*Web & Full Stack:*], [React, Next.js, Node.js, Express.js, TypeScript, Tailwind CSS, jQuery, HTML/CSS, FSD],
-  [*Programming:*], [Python, Java, Kotlin, JavaScript, C, C++, SQL, Bash, OCaml, PowerShell],
-  [*AI & Data Science:*], [TensorFlow, PyTorch, Scikit-Learn, Pandas, NLP, Deep Learning, Prompt Engineering],
-  [*IoT & Hardware:*], [ESP32 (S3/WROOM), Arduino, BLE (GATT), IR Sensors, I2C/SPI, LCD Interfaces],
-  [*Cloud & Tools:*], [AWS (EC2, Lambda), Microsoft Azure, Docker, Docker Compose, Git, MySQL, MongoDB, PostgreSQL],
-)
 
 == Certifications & Awards
 
@@ -144,14 +152,3 @@ A versatile and results-driven Computer Science student in Year 3 with a strong 
   issuer: "LinkedIn",
   date: "Apr 2026"
 )
-
-== Education
-
-#edu(
-  institution: "Heriot-Watt University",
-  location: "Dubai, UAE",
-  dates: dates-helper(start-date: "Sept 2024", end-date: "Sept 2028"),
-  degree: "Bachelor of Science in Computer Science (Artificial Intelligence)",
-  consistent: true,
-)
-- Relevant Coursework: Data Structures, Image Processing in C, Hardware-Software Interface.
